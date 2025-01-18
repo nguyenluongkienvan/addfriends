@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volkath</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .image-container {
+            margin: 0 auto;
+            width: 80%;
+            max-width: 600px;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .copyable-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .copyable-title::after {
+            content: ' (Copy)';
+            font-size: 14px;
+            color: gray;
+            display: block;
+            margin-top: 5px;
+        }
+        .subheading {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .copyable-title1 {
+            color: #00b8b8; /* Màu xanh ngọc */
+        }
+        .copyable-title2 {
+            color: red; /* Màu đỏ */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Add Kvan↓↓↓
+</header>
+
+<div class="content">
+    <!-- Bức ảnh -->
+    <div class="image-container">
+        <img src="image.jpg" alt="Liên Quân Mobile">
+    </div>
+
+    <!-- Tiêu đề có thể sao chép 1 (Màu xanh ngọc) -->
+    <div class="copyable-title copyable-title1" id="copyableTitle1" onclick="copyTextAndRedirect('copyableTitle1')">
+        建文Knight2k
+    </div>
+
+    <!-- Tiêu đề có thể sao chép 2 (Màu đỏ) -->
+    <div class="copyable-title copyable-title2" id="copyableTitle2" onclick="copyTextAndRedirect('copyableTitle2')">
+        6140644599071857
+    </div>
+</div>
+
+<script>
+    function copyTextAndRedirect(elementId) {
+        const textToCopy = document.getElementById(elementId).innerText;
+        const textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+
+        // Hiển thị thông báo "Vào Game Chiến Thôi Nào"
+        alert("Vào Game Chiến Thôi Nào: ");
+    }
+</script>
+
+</body>
+</html>
